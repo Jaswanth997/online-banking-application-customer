@@ -1,5 +1,7 @@
 package com.capgemini.springboot.jpa.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,8 +12,10 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name= "post_news")
-public class PostNews {
+public class PostNews implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name= "news_id")

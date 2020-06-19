@@ -1,5 +1,7 @@
 package com.capgemini.springboot.jpa.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,14 +10,17 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "request")
-public class Request {
-	
+public class Request implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name= "request_id")
@@ -31,7 +36,8 @@ public class Request {
 	private String phoneNumber;
 	
 	@Column(name= "leaves")
-	@Size(max=30, message ="please choose number of chequeleaves below 30 only")
+	@NotNull(message = "please mention your number of leaves for chequebook")
+	@Size(max=30, message ="please choose number of leaves below 30 only")
 	private String leaves;
 	
 	@Column(name= "status")

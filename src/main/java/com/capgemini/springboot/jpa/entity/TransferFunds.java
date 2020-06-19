@@ -1,10 +1,8 @@
 package com.capgemini.springboot.jpa.entity;
 
-import java.io.Serializable;
 import javax.validation.constraints.NotNull;
 
-@SuppressWarnings("serial")
-public class TransferFunds implements Serializable {
+public class TransferFunds {
 	
 	@NotNull
 	private String receiverName;

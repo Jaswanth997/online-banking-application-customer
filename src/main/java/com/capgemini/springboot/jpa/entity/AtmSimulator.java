@@ -1,23 +1,17 @@
 package com.capgemini.springboot.jpa.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 
 public class AtmSimulator {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@NotNull(message= "please enter your card ")
 	private String  card;
 	
 	@NotNull(message= "please enter amount")
-	@Pattern(regexp = "^(?:[1-9][0-9]{0,4}(?:\\.\\d{1,2})?|25000)$", message = "Atm transaction are permitted upto 25000 only for single transaction")
 	private String amount;
 	
 	@NotNull(message ="please enter your pin")

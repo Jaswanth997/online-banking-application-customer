@@ -1,5 +1,6 @@
 package com.capgemini.springboot.jpa.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -18,8 +19,10 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name= "customer_details")
-public class CustomerDetails {
+public class CustomerDetails implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name= "customer_id")
@@ -70,7 +73,6 @@ public class CustomerDetails {
 	private String bankBranch;
 	
 	@Column(name= "account_no")
-	@Pattern(regexp = "[0-9]{16}", message = "please enter a valid 16 digits account number ")
 	private String accountNumber;
 	
 	@Column(name= "opening_balance")
@@ -78,7 +80,6 @@ public class CustomerDetails {
 	private String openingBalance;
 	
 	@Column(name= "pin")
-	//@Pattern(regexp = "[0-9]{4}", message = "please enter 4 digits only")
 	private String pin;
 	
 	@Column(name= "password",unique= true)

@@ -8,7 +8,7 @@
 		<version>2.2.7.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.capgemini.springboot.jpa</groupId>
+	<groupId>com.springboot.jpa.onlinebanking</groupId>
 	<artifactId>online-banking-system-customer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>online-banking-system-customer</name>
